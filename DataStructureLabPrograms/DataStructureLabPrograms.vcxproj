@@ -11,19 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CircularLinkedList.c" />
-    <ClCompile Include="DoublyCircularLinkedList.c" />
-    <ClCompile Include="DoublyLinkedList.c" />
-    <ClCompile Include="InfixToPostfix.c" />
-    <ClCompile Include="InfixToPrefix.c" />
-    <ClCompile Include="InsertionSort.c" />
-    <ClCompile Include="LinkedList.c" />
-    <ClCompile Include="QueuesUsingArrays.c" />
-    <ClCompile Include="QueueUsingLinkedList.c" />
-    <ClCompile Include="SinglyLinkedList.c" />
-    <ClCompile Include="StacksUsingArray.c" />
-    <ClCompile Include="StackUsingLinkedList.C" />
-    <ClCompile Include="TowerOfHanoi.c" />
+    <ClCompile Include="BinaryTree.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0A4BEF00-1CB3-48D4-A3C1-48494333C3FD}</ProjectGuid>

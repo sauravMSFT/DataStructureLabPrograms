@@ -15,43 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinkedList.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CircularLinkedList.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DoublyCircularLinkedList.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DoublyLinkedList.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InfixToPostfix.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InfixToPrefix.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="InsertionSort.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QueuesUsingArrays.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QueueUsingLinkedList.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SinglyLinkedList.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StacksUsingArray.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StackUsingLinkedList.C">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TowerOfHanoi.c">
+    <ClCompile Include="BinaryTree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
