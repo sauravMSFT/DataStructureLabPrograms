@@ -12,7 +12,7 @@ typedef struct NODE * node;
 int count = 0;
 node Create()
 {
-	node temp = malloc(sizeof(node));
+	node temp = (node)malloc(sizeof(node));
 	if (temp == NULL)
 	{
 		printf("\nOut of memory.");
@@ -26,7 +26,6 @@ node Create()
 }
 void InsertFront(node *first, node *last, node *temp)
 {
-	//node temp = Create();
 	if (*first == NULL)
 	{
 		*first = *last = *temp;
@@ -39,12 +38,9 @@ void InsertFront(node *first, node *last, node *temp)
 		(*first)->llink = *temp;
 		*first = *temp;
 	}
-	//++count;
-	//printf("\nNode with data %d was inserted.", temp->info);
 }
 void InsertRear(node *first, node *last, node *temp)
 {
-	//temp = Create();
 	if (*first == NULL)
 	{
 		*first = *last = *temp;
@@ -57,8 +53,6 @@ void InsertRear(node *first, node *last, node *temp)
 		(*first)->llink = *temp;
 		*last = *temp;
 	}
-	//++count;
-	//printf("\nNode with data %d was inserted.", temp->info);
 }
 void InsertPosition(node *first, node *last, int pos)
 {
@@ -93,7 +87,6 @@ void DeleteFront(node *first, node *last)
 		printf("\nList underflow.");
 		return;
 	}
-	//printf("\nNode with data %d was deleted.", (*first)->info);
 	if ((*first)->rlink == *first)
 	{
 		//free(*first);
@@ -165,8 +158,6 @@ void Display(node *first, node *last)
 		return;
 	}
 	printf("\nThe list contains:\n");
-	//Replace the following by a for loop, it's easier 
-	//TODO
 	while (temp->rlink != *first)
 	{
 		printf("--> %d ", temp->info);

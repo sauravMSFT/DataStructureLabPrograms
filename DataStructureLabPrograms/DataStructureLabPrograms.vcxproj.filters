@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTree.c">
+    <ClCompile Include="TowerOfHanoi.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

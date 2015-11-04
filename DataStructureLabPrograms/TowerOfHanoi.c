@@ -14,12 +14,11 @@ void TowerOfHanoi(int a, char from, char aux, char to)
 		TowerOfHanoi(a - 1, aux, from, to);
 	}
 }
-int main()
+void main()
 {
 	int n;
-	printf("\n*****Tower of Hanoi*****\n");
+	printf("\nTower of Hanoi\n");
 	printf("\nEnter number of discs: ");
 	scanf("%d", &n);
 	TowerOfHanoi(n, 'S', 'A', 'D');
-	return 0;
 }
