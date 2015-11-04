@@ -15,19 +15,19 @@ node CreateNode()
 void ReadData(node *n, char a[])
 {
 	if ((*n) == NULL)return;
-	printf("\nEnter data for %s: ", a);
+	printf("Enter data for %s: ", a);
 	scanf("%d", &((*n)->info));
 }
 int LeftOrRight(node root, char child[])
 {
 	int ch;
-	printf("\nCreate %s child of %d? Yes[1] or No[0]:", child, root->info);
+	printf("Create %s child of %d? Yes[1] or No[0]: ", child, root->info);
 	do
 	{
 		scanf("%d", &ch);
 		if ((ch != 0) && (ch != 1))
 		{
-			printf("Invalid choice. Try again.\n");
+			printf("\nInvalid choice. Try again: ");
 		}
 	} while ((ch != 0) && (ch != 1));
 	return ch;
@@ -42,10 +42,6 @@ void Create(node *root)
 		ReadData(&temp, "Left child");
 		Create(&temp);
 	}
-	else
-	{
-		(*root)->lchild = NULL;
-	}
 	if (LeftOrRight(*root, "Right"))
 	{
 		(*root)->rchild = CreateNode();
@@ -53,18 +49,14 @@ void Create(node *root)
 		ReadData(&temp, "Right child");
 		Create(&temp);
 	}
-	else
-	{
-		(*root)->rchild = NULL;
-	}
 }
-void Inorder(node *root)
+void Inorder(node *n)
 {
-	if ((*root) != NULL)
+	if ((*n) != NULL)
 	{
-		Inorder(&(*root)->lchild);
-		printf("%d =>", (*root)->info);
-		Inorder(&(*root)->rchild);
+		Inorder(&(*n)->lchild);
+		printf("%d =>", (*n)->info);
+		Inorder(&(*n)->rchild);
 	}
 }
 void main()

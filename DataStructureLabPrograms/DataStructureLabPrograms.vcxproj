@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TowerOfHanoi.c" />
+    <ClCompile Include="BinaryTreeTraversal.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0A4BEF00-1CB3-48D4-A3C1-48494333C3FD}</ProjectGuid>

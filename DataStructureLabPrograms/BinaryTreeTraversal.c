@@ -28,23 +28,19 @@ void Insert(node *n, int num)
 	else
 	{
 		if (num < ((*n)->info))
-		{
 			Insert(&((*n)->lchild), num);
-		}
 		else
-		{
 			Insert(&((*n)->rchild), num);
-		}
 	}
 }
-void CreateTree(node *root, int size)
+void CreateTree(node *n, int size)
 {
 	int i, data;
 	for (i = 0; i < size; ++i)
 	{
 		printf("\nEnter data for Node %d: ", i + 1);
 		scanf("%d", &data);
-		Insert(root, data);
+		Insert(n, data);
 	}
 }
 void Inorder(node *n)
