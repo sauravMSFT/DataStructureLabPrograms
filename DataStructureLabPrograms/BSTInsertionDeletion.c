@@ -164,19 +164,28 @@ node Delete(node *root, int key)
 	}
 	if (toDelete->lchild == NULL || toDelete->rchild == NULL)
 	{
-		lchild = toDelete->lchild;
-		rchild = toDelete->rchild;
+		lchild = toDelete->lchild; rchild = toDelete->rchild;
 		if (parent == NULL)
 		{
-			if (toDelete->lchild != NULL)toDelete = toDelete->lchild;
-			else toDelete = toDelete->rchild;
-			return toDelete;
+			if (toDelete->lchild != NULL)
+			{
+				temp = toDelete;
+				toDelete = toDelete->lchild;
+			}
+			else
+			{
+				temp = toDelete;
+				toDelete = toDelete->rchild;
+			}
 		}
 		else
 		{
+			temp = toDelete;
 			if (parent->lchild == toDelete)parent->lchild = lchild;
 			else parent->rchild = rchild;
 		}
+		free(temp);
+		return toDelete;
 	}
 	else
 	{
