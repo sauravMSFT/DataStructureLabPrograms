@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryTreeTraversal.c">
+    <ClCompile Include="BSTInsertionDeletion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
