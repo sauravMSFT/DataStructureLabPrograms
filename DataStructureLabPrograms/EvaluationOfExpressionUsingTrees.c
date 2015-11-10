@@ -61,7 +61,9 @@ node CreateTree(char exp[])
 		}
 		Push(&stack, &top, &temp);
 	}
-	return Pop(&stack, &top);
+	temp = Pop(&stack, &top);
+	free(stack);
+	return temp;
 }
 double Evaluate(node *n)
 {
@@ -83,7 +85,6 @@ double Evaluate(node *n)
 void main()
 {
 	char postfix[SIZE];
-	
 	node root = NULL;
 	double ans;
 	printf("\nEnter the postfix expression: ");
