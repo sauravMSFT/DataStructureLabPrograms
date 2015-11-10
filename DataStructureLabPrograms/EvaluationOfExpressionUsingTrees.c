@@ -66,7 +66,7 @@ void Insert(node *n, char symbol)
 		if ((*n)->rchild == NULL)
 			Insert(&((*n)->rchild), symbol);
 		else
-			Insert(&((*n)->rchild), symbol);
+			Insert(&((*n)->lchild), symbol);
 	}
 }
 void CreateTree(node *root, char exp[])
@@ -86,11 +86,11 @@ double Evaluate(node *n)
 	}
 	switch ((*n)->symbol)
 	{
-	case '*': return (Evaluate((*n)->lchild) * Evaluate((*n)->rchild));
-	case '/': return (Evaluate((*n)->lchild) / Evaluate((*n)->rchild));
-	case '+': return (Evaluate((*n)->lchild) + Evaluate((*n)->rchild));
-	case '-': return (Evaluate((*n)->lchild) - Evaluate((*n)->rchild));
-	case '^': return pow(Evaluate((*n)->lchild), Evaluate((*n)->rchild));
+	case '*': return (Evaluate(&((*n)->lchild)) * Evaluate(&((*n)->rchild)));
+	case '/': return (Evaluate(&((*n)->lchild)) / Evaluate(&((*n)->rchild)));
+	case '+': return (Evaluate(&((*n)->lchild)) + Evaluate(&((*n)->rchild)));
+	case '-': return (Evaluate(&((*n)->lchild)) - Evaluate(&((*n)->rchild)));
+	case '^': return pow(Evaluate(&((*n)->lchild)), Evaluate(&((*n)->rchild)));
 	default:  return 0;
 	}
 }
