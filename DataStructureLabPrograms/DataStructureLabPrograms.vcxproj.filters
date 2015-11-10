@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EvaluationOfExpressionUsingTrees.c">
+    <ClCompile Include="RightInthreadedBinaryTree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
