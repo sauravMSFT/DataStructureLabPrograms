@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 #include <math.h>
 #include <malloc.h>
 #define SIZE 40
@@ -74,11 +73,11 @@ double Evaluate(node *n)
 	}
 	switch ((*n)->symbol)
 	{
-	case '*': return (Evaluate(&((*n)->lchild)) * Evaluate(&((*n)->rchild)));
-	case '/': return (Evaluate(&((*n)->lchild)) / Evaluate(&((*n)->rchild)));
-	case '+': return (Evaluate(&((*n)->lchild)) + Evaluate(&((*n)->rchild)));
-	case '-': return (Evaluate(&((*n)->lchild)) - Evaluate(&((*n)->rchild)));
-	case '^': return pow(Evaluate(&((*n)->lchild)), Evaluate(&((*n)->rchild)));
+	case '*': return Evaluate(&(*n)->lchild) * Evaluate(&(*n)->rchild);
+	case '/': return Evaluate(&(*n)->lchild) / Evaluate(&(*n)->rchild);
+	case '+': return Evaluate(&(*n)->lchild) + Evaluate(&(*n)->rchild);
+	case '-': return Evaluate(&(*n)->lchild) - Evaluate(&(*n)->rchild);
+	case '^': return pow(Evaluate(&(*n)->lchild), Evaluate(&(*n)->rchild));
 	default:  return 0;
 	}
 }

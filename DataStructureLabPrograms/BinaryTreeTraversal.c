@@ -11,7 +11,7 @@ node CreateNode()
 	node temp = malloc(sizeof(struct NODE));
 	temp->lchild = temp->rchild = NULL;
 	return temp;
-}
+} 
 void ReadData(node *n, char a[])
 {
 	if ((*n) == NULL)return;
