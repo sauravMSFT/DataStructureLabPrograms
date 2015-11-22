@@ -18,26 +18,21 @@ node InorderSuccessor(node);
 
 void main()
 {
-	int choice, n, i, item;
+	int choice, item;
 	node head = Create(-999);
 	head->right = head;
 	head->rt = 0;
 	while (1)
 	{
-		printf("\n1. Create\n2. Inorder Traversal\n3. Exit");
+		printf("\n1. Insert\n2. Inorder Traversal\n3. Exit");
 		printf("\nEnter your choice: ");
 		scanf("%d", &choice);
 		switch (choice)
 		{
 		case 1:
-			printf("\nEnter the number of nodes to be created: ");
-			scanf("%d", &n);
-			for (i = 0; i < n; i++)
-			{
-				printf("\nEnter the data for node %d: ", i + 1);
+			printf("\nEnter the data for insertion: ");
 				scanf("%d", &item);
 				Insert(item, &head);
-			}
 			break;
 		case 2: 
 			Inorder(head);

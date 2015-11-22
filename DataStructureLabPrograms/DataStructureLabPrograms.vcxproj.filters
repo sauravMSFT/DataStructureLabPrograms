@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RightInthreadedBinaryTree.c">
+    <ClCompile Include="BSTInsertionDeletion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
