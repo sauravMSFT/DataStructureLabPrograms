@@ -48,7 +48,7 @@ void Delete(node *start)
 	temp = *start;
 	(*start) = (*start)->ptr;
 	data = temp->info;
-	free(temp);
+	//free(temp);
 	printf("\nNode with data = %d was deleted from the queue.", data);
 }
 void Display(node *start)
@@ -76,7 +76,7 @@ void main()
 		printf("\n1. ENQUEUE\n2. DEQUEUE\n3. DISPLAY\n4. EXIT");
 		printf("\nEnter your choice: ");
 		scanf("%d", &ch);
-		system("cls");
+		//system("cls");
 		//clrscr();
 		switch (ch)
 		{

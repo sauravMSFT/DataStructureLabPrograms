@@ -62,19 +62,17 @@ void Display(int *front, int *rear, int queue[])
 }
 int main()
 {
-	int front, rear, queue[SIZE], num, choice;
+	int front, rear, queue[SIZE], choice;
 	front = rear = -1;
 	//clrscr();
-	system("cls");
 	while (1)
 	{
-		cheqeu
 		printf("\n MAIN MENU");
 		printf("\n 1. INSERT\n 2. DELETE\n 3. DISPLAY\n 4. EXIT");
 		printf("\n Enter your choice: ");
 		scanf("%d", &choice);
 		//clrscr();
-		system("cls");
+		//system("cls");
 		switch (choice)
 		{
 		case 1:

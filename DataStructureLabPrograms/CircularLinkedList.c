@@ -126,7 +126,7 @@ void main()
 		printf("\n1. INSERT\n2. DELETE\n3. DISPLAY\n4. EXIT");
 		printf("\nEnter your choice: ");
 		scanf("%d", &i);
-		system("cls");
+		//system("cls");
 		//clrscr();
 		switch (i)
 		{

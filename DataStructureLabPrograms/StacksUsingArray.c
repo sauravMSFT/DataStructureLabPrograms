@@ -46,7 +46,7 @@ int main()
 	int top, stack[SIZE], num, choice;
 	top = -1;
 	//clrscr();
-	system("cls");
+	//system("cls");
 	while (1)
 	{
 		printf("\n MAIN MENU\n STACK IMPLEMENTATION");
@@ -54,7 +54,7 @@ int main()
 		printf("\n Enter your choice: ");
 		scanf("%d", &choice);
 		//clrscr();
-		system("cls");
+		//system("cls");
 		switch (choice)
 		{
 		case 1:

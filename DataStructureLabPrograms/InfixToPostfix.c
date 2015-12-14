@@ -85,7 +85,6 @@ void InfixToPostfix(char infix[], char postfix[])
 		postfix[j++] = Pop();
 		return;
 	}
-	
 }
 void main()
 {
@@ -96,5 +95,4 @@ void main()
 	InfixToPostfix(infix, postfix);
 	printf("Infix expression is = %s\n", infix);
 	printf("Postfix expression is = %s\n", postfix);
-	//system("pause");
 }

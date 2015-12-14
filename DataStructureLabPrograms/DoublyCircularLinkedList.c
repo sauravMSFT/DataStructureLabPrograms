@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <conio.h>
 #include <malloc.h>
-#include <process.h>
 struct NODE
 {
 	int info;
@@ -12,7 +11,7 @@ typedef struct NODE * node;
 int count = 0;
 node Create()
 {
-	node temp = (node)malloc(sizeof(node));
+	node temp = malloc(sizeof(struct NODE));
 	if (temp == NULL)
 	{
 		printf("\nOut of memory.");
@@ -89,30 +88,29 @@ void DeleteFront(node *first, node *last)
 	}
 	if ((*first)->rlink == *first)
 	{
-		//free(*first);
+		free(*first);
 		*first = *last = NULL;
 	}
 	else
 	{
 		(*last)->rlink = (*first)->rlink;
-		//free(*first);
+		free(*first);
 		(*first)->rlink->llink = *last;
 		*first = (*first)->rlink;
 	}
-	//--count;
 }
 void DeleteRear(node *first, node *last)
 {
-	//int data;
+	int data;
 	if (*first == NULL)
 	{
 		printf("\nList underflow.");
 		return;
 	}
-	//data = (*last)->info;
+	data = (*last)->info;
 	if ((*first)->rlink == *first)
 	{
-		//free(*first);
+		free(*first);
 		*first = *last = NULL;
 	}
 	else
@@ -120,9 +118,8 @@ void DeleteRear(node *first, node *last)
 		(*last)->llink->rlink = *first;
 		(*first)->llink = (*last)->llink;
 		*last = (*last)->llink;
-		//printf("\nNode with data %d was deleted.", data);
+		printf("\nNode with data %d was deleted.", data);
 	}
-	//--count;
 }
 void DeletePosition(node *first, node *last, int pos)
 {
@@ -145,7 +142,7 @@ void DeletePosition(node *first, node *last, int pos)
 		temp = cur;
 		prev->rlink = cur->rlink;
 		cur->rlink->llink = prev;
-		//free(temp);
+		free(temp);
 	}
 	--count;
 }
