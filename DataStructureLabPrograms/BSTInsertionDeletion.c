@@ -27,7 +27,7 @@ void main()
 	bool found;
 	while (1)
 	{
-		printf("\nBINARY SEARCH TREE\n");
+		//printf("\nBINARY SEARCH TREE\n");
 		printf("\n1. Insert\n2. Delete\n3. In-Order Traversal\n4. Exit");
 		printf("\nEnter your choice: ");
 		scanf("%d", &choice);

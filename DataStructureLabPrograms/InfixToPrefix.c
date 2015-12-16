@@ -1,96 +1,105 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define SIZE 30
 
 #include <stdio.h>
 #include <conio.h>
 #include <string.h>
 
-char prefix[SIZE], infix[SIZE], stack[SIZE], symbol, temp;
-int top = -1, length, i = 0, j = 0, k = 0;
-
-void Push(char symbol) { stack[++top] = symbol; }
-char Pop(){	return stack[top--];}
-int ISP(char symbol)
+void Append(char string[], char value)
 {
-	switch (symbol)
-	{
-	case '^': return 6;
-	case '*':
-	case '/': return 3;
-	case '+': 
-	case '-': return 1;
-	case ')': return 0;
-	case '#': return -1;
-	}
+	int length = strlen(string);
+	string[length] = value;
 }
-int ICP(char symbol)
+void Push(char stack[], int *top, char symbol)
 {
-	switch (symbol)
+	stack[++(*top)] = symbol;
+}
+char Pop(char stack[], int *top)
+{
+	return stack[(*top)--];
+}
+char Peep(char stack[], int top)
+{
+	return stack[top];
+}
+int StackEmpty(int top)
+{
+	if (top == -1)return 1;
+	return 0;
+}
+int IsOperator(char ch)
+{
+	switch (ch)
 	{
-	case '^': return 5;
+	case '/':
 	case '*':
-	case '/': return 4;
 	case '+':
-	case '-': return 2;
-	case ')': return 0;
-	case '(': return 9;
+	case '-': return 1;
+	default: return 0;
 	}
 }
-void InfixToPrefix()
+int Precedence(char symbol)
 {
-	Push('#');
-	length = strlen(infix) - 1;
-	j = length;
-	while (infix[i] != '\0')
+	switch (symbol)
 	{
-		if (infix[i] == '(' || infix[i] == ')')
-			j--;
-		i++;
+	case '*':
+	case '/': return 2;
+	case '+':
+	case '-': return 1;
+	default: return 0;
 	}
-	while (length >= k)
+}
+void InfixToPostfix(char infix[], char prefix[])
+{
+	#define SIZE 30
+	int top = -1, i;
+	char symbol, temp, stack[SIZE];
+	_strrev(infix);
+	strcpy(prefix, "");
+	for (i = 0; i < (int)strlen(infix); ++i)
 	{
-		symbol = infix[length];
-		switch (symbol)
+		symbol = infix[i];
+		if (symbol == ')')
 		{
-		case ')':
-			Push(symbol);
-			break;
-		case '(':
-			temp = Pop();
+			Push(stack, &top, symbol);
+		}
+		else if (symbol == '(')
+		{
+			temp = Pop(stack, &top);
 			while (temp != ')')
 			{
-				prefix[j--] = temp;
-				temp = Pop();
+				Append(prefix, temp);
+				temp = Pop(stack, &top);
 			}
-			break;
-		case '^':
-		case '*': 
-		case '+':
-		case '-':
-			while (ISP(stack[top]) >= ICP(symbol))
-			{
-				temp = Pop();
-				prefix[j--] = temp;
-			}
-			Push(symbol);
-			break;
-		default: prefix[j--] = symbol;
-			break;
 		}
-		length--;
+		else if (IsOperator(symbol))
+		{
+			if (Precedence(Peep(stack, top)) > Precedence(symbol))
+			{
+				temp = Pop(stack, &top);
+				Append(prefix, temp);
+			}
+			Push(stack, &top, symbol);
+		}
+		else
+		{
+			Append(prefix, symbol);
+		}
 	}
-	while (top > 0)
+	while (!StackEmpty(top))
 	{
-		temp = Pop();
-		prefix[j--] = temp;
+		Append(prefix, Pop(stack, &top));
 	}
+	//Restore Infix Expression
+	_strrev(infix);
+	_strrev(prefix);
 }
 void main()
 {
-	system("cls");
+#define SIZE 30
+	char infix[SIZE] = { 0 }, prefix[SIZE] = { 0 };
 	printf("Enter the infix expression: ");
 	scanf("%s", infix);
-	InfixToPrefix();
-	printf("\nInfix expression: %s\n", infix);
-	printf("\nPrefix expression: %s\n", prefix);
+	InfixToPostfix(infix, prefix);
+	printf("Infix expression is = %s\n", infix);
+	printf("Postfix expression is = %s\n", prefix);
 }
