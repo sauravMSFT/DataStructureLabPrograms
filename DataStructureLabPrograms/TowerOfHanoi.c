@@ -1,24 +1,28 @@
-#define _CRT_SECURE_NO_WARNINGS
+/* 
+ * C program to simulate the tower of hanoi.
+ * Takes as input the number of disks, and generates
+ * the sequence of steps to move the disks from 'S' to 'D'.
+ *
+ */
+
 #include <stdio.h>
-void TowerOfHanoi(int a, char from, char aux, char to) 
-{
-	if (a == 1)
-	{
-		printf("\nMove disc  %d  from  %c  to  %c \n", a, from, to);
+
+void towerOfHanoi(int a, char from, char aux, char to) {
+	if (a == 1) {
+		printf("Move disc %d from %c to %c\n", a, from, to);
 		return;
 	}
-	else
-	{
-		TowerOfHanoi(a - 1, from, to, aux);
-		printf("\nMove disc  %d  from  %c  to  %c \n", a, from, to);
-		TowerOfHanoi(a - 1, aux, from, to);
-	}
+
+	towerOfHanoi(a - 1, from, to, aux);
+	printf("Move disc %d from %c to %c\n", a, from, to);
+	towerOfHanoi(a - 1, aux, from, to);
 }
-void main()
-{
+
+int main() {
 	int n;
-	printf("\nTower of Hanoi\n");
-	printf("\nEnter number of discs: ");
+
+	printf("Tower of Hanoi\n");
+	printf("Enter number of discs: ");
 	scanf("%d", &n);
-	TowerOfHanoi(n, 'S', 'A', 'D');
+	towerOfHanoi(n, 'S', 'A', 'D');
 }
