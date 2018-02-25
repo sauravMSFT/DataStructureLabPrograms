@@ -1,24 +1,24 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-void TowerOfHanoi(int a, char from, char aux, char to) 
+
+void towerOfHanoi(int a, char from, char aux, char to)
 {
 	if (a == 1)
 	{
-		printf("\nMove disc  %d  from  %c  to  %c \n", a, from, to);
+		printf("Move disc  %d  from  %c  to  %c \n", a, from, to);
 		return;
 	}
-	else
-	{
-		TowerOfHanoi(a - 1, from, to, aux);
-		printf("\nMove disc  %d  from  %c  to  %c \n", a, from, to);
-		TowerOfHanoi(a - 1, aux, from, to);
-	}
+
+    towerOfHanoi(a - 1, from, to, aux);
+	printf("Move disc  %d  from  %c  to  %c \n", a, from, to);
+	towerOfHanoi(a - 1, aux, from, to);
 }
-void main()
+
+int main()
 {
 	int n;
-	printf("\nTower of Hanoi\n");
-	printf("\nEnter number of discs: ");
+	printf("Tower of Hanoi\n");
+	printf("Enter number of discs: ");
 	scanf("%d", &n);
-	TowerOfHanoi(n, 'S', 'A', 'D');
+	towerOfHanoi(n, 'S', 'A', 'D');
 }
